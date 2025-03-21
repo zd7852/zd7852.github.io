@@ -4,70 +4,13 @@
   
     
     <entry>
-      <title>说说易经</title>
-      <link href="/2025/03/21/%E8%AF%B4%E8%AF%B4%E6%98%93%E7%BB%8F/"/>
-      <url>/2025/03/21/%E8%AF%B4%E8%AF%B4%E6%98%93%E7%BB%8F/</url>
+      <title>jar包导出到Linux里</title>
+      <link href="/2025/03/21/jar%E5%8C%85%E5%AF%BC%E5%87%BA%E5%88%B0Linux%E9%87%8C/"/>
+      <url>/2025/03/21/jar%E5%8C%85%E5%AF%BC%E5%87%BA%E5%88%B0Linux%E9%87%8C/</url>
       
-        <content type="html"><![CDATA[<h1 id="我就随便测试"><a href="#我就随便测试" class="headerlink" title="我就随便测试"></a>我就随便测试</h1><h2 id="如何是什么情况"><a href="#如何是什么情况" class="headerlink" title="如何是什么情况"></a>如何是什么情况</h2><div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
-      
-      
-      <categories>
-          
-          <category> 论道 </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<h1 id="使用-IntelliJ-IDEA-编写-Java-程序并导出-JAR-包（适用于-Linux）"><a href="#使用-IntelliJ-IDEA-编写-Java-程序并导出-JAR-包（适用于-Linux）" class="headerlink" title="使用 IntelliJ IDEA 编写 Java 程序并导出 JAR 包（适用于 Linux）"></a>使用 IntelliJ IDEA 编写 Java 程序并导出 JAR 包（适用于 Linux）</h1><h2 id="1-创建-Java-项目"><a href="#1-创建-Java-项目" class="headerlink" title="1. 创建 Java 项目"></a><strong>1. 创建 Java 项目</strong></h2><ol><li>打开 <strong>IntelliJ IDEA</strong>，点击 <strong>File -&gt; New -&gt; Project</strong>。</li><li>选择 <strong>Java</strong>，点击 <strong>Next</strong>。</li><li>选择 <strong>JDK 版本</strong>（如果没有，请安装 JDK 并添加）。</li><li>取消勾选 <strong>Create project from template</strong>，点击 <strong>Next</strong>。</li><li>取个项目名称（如 <code>HelloWorld</code>），点击 <strong>Finish</strong>。</li></ol><hr><h2 id="2-编写-Java-代码"><a href="#2-编写-Java-代码" class="headerlink" title="2. 编写 Java 代码"></a><strong>2. 编写 Java 代码</strong></h2><ol><li>在 <code>src</code> 目录下创建 <code>Main.java</code> 文件，代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, Linux!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><strong>运行</strong>程序（点击 <code>▶</code> 按钮）检查是否正常输出 <code>Hello, Linux!</code>。</li></ol><hr><h2 id="3-配置-JAR-生成"><a href="#3-配置-JAR-生成" class="headerlink" title="3. 配置 JAR 生成"></a><strong>3. 配置 JAR 生成</strong></h2><ol><li><strong>打开</strong> IntelliJ IDEA <strong>菜单</strong>：<br><code>File -&gt; Project Structure -&gt; Artifacts</code></li><li><strong>点击</strong> <code>+</code> -&gt; <code>JAR</code> -&gt; <code>From modules with dependencies</code>。</li><li><strong>选择模块</strong>（你的 <code>Main</code> 类所在的模块），勾选 <code>Include in project build</code>，点击 <strong>OK</strong>。</li><li>选择 <strong>输出路径</strong>（默认是 <code>out/artifacts/HelloWorld_jar/HelloWorld.jar</code>）。</li><li><strong>点击</strong> <code>Apply</code> -&gt; <code>OK</code>。</li></ol><hr><h2 id="4-生成-JAR"><a href="#4-生成-JAR" class="headerlink" title="4. 生成 JAR"></a><strong>4. 生成 JAR</strong></h2><ol><li><strong>打开菜单</strong>：<code>Build -&gt; Build Artifacts</code>。</li><li>选择 <code>HelloWorld.jar</code>，然后点击 <code>Build</code>。</li><li>在 <code>out/artifacts/HelloWorld_jar/</code> 目录下会生成 <code>HelloWorld.jar</code>。</li></ol><hr><h2 id="5-在-Linux-上运行"><a href="#5-在-Linux-上运行" class="headerlink" title="5. 在 Linux 上运行"></a><strong>5. 在 Linux 上运行</strong></h2><ol><li><strong>将 JAR 复制到 Linux</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp out/artifacts/HelloWorld_jar/HelloWorld.jar user@your_linux_ip:/home/user/</span><br></pre></td></tr></table></figure></li><li><strong>SSH 进入 Linux</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@your_linux_ip</span><br></pre></td></tr></table></figure></li><li><strong>运行 JAR</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar HelloWorld.jar</span><br></pre></td></tr></table></figure>你应该会看到：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Linux!</span><br></pre></td></tr></table></figure></li></ol><p>这样你就成功在 Linux 上运行了你的 Java JAR 包！🚀  </p><div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
       
       
-    </entry>
-    
-    
-    
-    <entry>
-      <title>再次测试</title>
-      <link href="/2025/03/18/%E5%86%8D%E6%AC%A1%E6%B5%8B%E8%AF%95/"/>
-      <url>/2025/03/18/%E5%86%8D%E6%AC%A1%E6%B5%8B%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[<h1 id="再次测试"><a href="#再次测试" class="headerlink" title="再次测试"></a>再次测试</h1><h2 id="博文和page的区别"><a href="#博文和page的区别" class="headerlink" title="博文和page的区别"></a>博文和page的区别</h2><div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试类文章</title>
-      <link href="/2025/03/17/%E6%B5%8B%E8%AF%95%E7%B1%BB%E6%96%87%E7%AB%A0/"/>
-      <url>/2025/03/17/%E6%B5%8B%E8%AF%95%E7%B1%BB%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="为了测试"><a href="#为了测试" class="headerlink" title="为了测试"></a>为了测试</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a>第一节</h3><h3 id="第一节-1"><a href="#第一节-1" class="headerlink" title="第一节"></a>第一节</h3><h3 id="第一节-2"><a href="#第一节-2" class="headerlink" title="第一节"></a>第一节</h3><div class="video-container">[up主专用，视频内嵌代码贴在这]</div><style>.video-container {    position: relative;    width: 100%;    padding-top: 56.25%; /* 16:9 aspect ratio (height/width = 9/16 * 100%) */}.video-container iframe {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;}</style>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试文章</title>
-      <link href="/2025/03/15/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-      <url>/2025/03/15/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="文章题目"><a href="#文章题目" class="headerlink" title="文章题目"></a>文章题目</h1><h2 id="第一节："><a href="#第一节：" class="headerlink" title="第一节："></a>第一节：</h2><h3 id="1-测试1"><a href="#1-测试1" class="headerlink" title="1. 测试1"></a>1. 测试1</h3><h3 id="2-测试2"><a href="#2-测试2" class="headerlink" title="2. 测试2"></a>2. 测试2</h3><h3 id="3-测试3"><a href="#3-测试3" class="headerlink" title="3. 测试3"></a>3. 测试3</h3><h2 id="第二节："><a href="#第二节：" class="headerlink" title="第二节："></a>第二节：</h2><h3 id="1-测试1-1"><a href="#1-测试1-1" class="headerlink" title="1. 测试1"></a>1. 测试1</h3><h3 id="2-测试2-1"><a href="#2-测试2-1" class="headerlink" title="2. 测试2"></a>2. 测试2</h3><h3 id="3-测试3-1"><a href="#3-测试3-1" class="headerlink" title="3. 测试3"></a>3. 测试3</h3><p><img src="https://raw.githubusercontent.com/zd7852/image/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 博客 </tag>
-            
-        </tags>
       
     </entry>
     
